@@ -1,0 +1,116 @@
+<html ng-app="Jockstrap">
+<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.14/angular.min.js"></script>
+</head>
+<body ng-controller="JockstrapController">
+
+<div class="container">
+
+<div class="panel">
+	<div class="header">Dropdown</div>
+	<div class="body">
+
+	<div class="label_code">HTML</div>
+	<pre class="prettyprint">
+&lt;dropdown src="dd" text="Dropdown">&lt;/dropdown>
+	</pre>
+
+	<div class="label_code">JS</div>
+	<pre class="prettyprint">
+// Some function
+$scope.show_msg = function() {
+	alert('Hey this was a function call');
+};
+
+// Data for the drop down
+$scope.dd = [
+	{
+		text: 'Title',
+		type: 'header'
+	},
+	{
+		text: 'item',
+		onclick: $scope.show_msg
+	},
+	{
+		type: 'divider'
+	},
+	{
+		text: 'second'
+	}
+];
+	</pre>
+
+	</div>
+</div>
+
+
+
+</div>
+
+
+
+<script type="text/javascript">
+var Jockstrap = angular.module('Jockstrap', []);
+
+Jockstrap.directive('dropdown', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			src: "=",
+			text: "@",
+			onclick: "&"
+		},
+		template: '<button class="btn menu">{{text}}<ul><li ng-repeat="(key, value) in src" class="{{value.type}}" ng-click="value.onclick()">{{value.text}}</li></ul></button>'
+	};
+});
+
+Jockstrap.controller('JockstrapController', ['$scope', function($scope) {
+
+$scope.show_msg = function() {
+	alert('Yo man');
+};
+
+$scope.dd = [
+				{
+					text: 'Title',
+					type: 'header'
+				},
+				{
+					text: 'item',
+					onclick: $scope.show_msg
+				},
+				{
+					type: 'divider'
+				},
+				{
+					text: 'second'
+				}
+			];
+
+
+
+
+}]);
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/jockstrap.css">
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+<style type="text/css">
+.label_code {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+pre.prettyprint {
+	border: solid 1px #ccc;
+	padding: 20px;
+	font-size: 13px;
+}
+</style>
+</body>
+</html>
