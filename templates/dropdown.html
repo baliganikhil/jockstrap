@@ -1,0 +1,5 @@
+<button class="btn menu">{{text}}
+	<ul>
+		<li ng-repeat="(key, value) in src" class="{{value.type}}" ng-click="value.onclick()">{{value.text}}</li>
+	</ul>
+</button>

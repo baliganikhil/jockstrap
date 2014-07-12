@@ -69,6 +69,14 @@
 	/*opacity: 0.9;*/
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 input[type="text"], input[type="password"], select {
 	padding: 5px 10px;
 	border: solid 1px #ccc;
@@ -110,6 +118,21 @@ input[type="text"], input[type="password"], select {
 	font-size: 18px;
 	color: #444;
 	overflow: hidden;
+}
+
+.panel > .header .close {
+	background: #333;
+	color: #fff;
+	height: 20px;
+	border-radius: 50%;
+	width: 20px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+	padding-top: 1px;
+	padding-right: 1px;
+	cursor: pointer;
+	float: right;
 }
 
 .panel > .body {
@@ -346,6 +369,7 @@ input[type="text"], input[type="password"], select {
 	padding: 8px;
 	font-size: 13px;
 	color: #444;
+	text-align: center;
 }
 
 .table.bordered {
@@ -371,6 +395,10 @@ input[type="text"], input[type="password"], select {
 	background: #fafafa;
 }
 
+.accordion {
+	box-shadow: 2px 2px 2px #eee;
+}
+
 .accordion .header, .accordion .body {
 	font-size: 13px;
 	color: #333;
@@ -382,19 +410,20 @@ input[type="text"], input[type="password"], select {
 .accordion .header {
 	background: #fafafa;
 	border-top: none;
+	cursor: pointer;
 }
 
 .accordion .header:first-child {
 	border-top: solid 1px #ccc;
 }
 
-.accordion .body {
-	border-top: solid 1px #ccc;
-	display: none;
+.accordion .header:hover {
+	background: #eee;
 }
 
-.accordion .set.active .body {
-	display: block;
+.accordion .body {
+	border-top: solid 1px #ccc;
+	overflow: hidden;
 }
 
 .accordion .set:last-child .header {
@@ -407,4 +436,26 @@ input[type="text"], input[type="password"], select {
 
 .accordion .set:last-child.active .body {
 	border-bottom: solid 1px #ccc;
+}
+
+.accordion .set.active .header {
+	font-weight: bold;
+}
+
+.accordion .ng-hide {
+	display: block !important;
+	height: 0;
+	padding: 0;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+}
+
+.accordion .ng-show {
+	height: auto;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+}
+
+.pull-right {
+	float: right;
 }

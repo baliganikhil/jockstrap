@@ -7,8 +7,49 @@
 <div class="container">
 
 <div class="panel">
+	<div class="header">Accordion</div>
+	<div class="body">
+		<!-- <accordion ng-init="accordion_demo = 'demo'">
+			<div class="set" ng-class="{active: accordion_demo == 'demo'}">
+				<div class="header" ng-click="accordion_demo = 'demo'">Demo</div>
+				<div class="body" ng-show="accordion_demo == 'demo'">body</div>
+			</div>
+			<div class="set" ng-class="{active: accordion_demo == 'html'}">
+				<div class="header" ng-click="accordion_demo = 'html'">HTML</div>
+				<div class="body" ng-show="accordion_demo == 'html'">body</div>
+			</div>
+			<div class="set" ng-class="{active: accordion_demo == 'js'}">
+				<div class="header" ng-click="accordion_demo = 'js'">JS</div>
+				<div class="body" ng-show="accordion_demo == 'js'">body</div>
+			</div>
+		</accordion> -->
+
+		<accordion data-name="accordion_demo">
+			<div class="set" data-show="demo">
+				<div class="header">Demo</div>
+				<div class="body">body</div>
+			</div>
+			<div class="set" data-show="html">
+				<div class="header">HTML</div>
+				<div class="body">body</div>
+			</div>
+			<div class="set" data-show="js">
+				<div class="header">JS</div>
+				<div class="body">body</div>
+			</div>
+		</accordion>
+
+	</div>
+</div>
+
+
+
+<div class="panel">
 	<div class="header">Dropdown</div>
 	<div class="body">
+
+<dropdown src="dd" text="Dropdown"></dropdown>
+
 
 	<div class="label_code">HTML</div>
 	<pre class="prettyprint">
@@ -50,21 +91,27 @@ $scope.dd = [
 
 
 
+<script type="text/javascript" src="js/jockstrap.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/jockstrap.css">
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+<style type="text/css">
+.label_code {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+pre.prettyprint {
+	border: solid 1px #ccc;
+	padding: 20px;
+	font-size: 13px;
+}
+</style>
+
 <script type="text/javascript">
-var Jockstrap = angular.module('Jockstrap', []);
-
-Jockstrap.directive('dropdown', function() {
-	return {
-		restrict: 'E',
-		scope: {
-			src: "=",
-			text: "@",
-			onclick: "&"
-		},
-		template: '<button class="btn menu">{{text}}<ul><li ng-repeat="(key, value) in src" class="{{value.type}}" ng-click="value.onclick()">{{value.text}}</li></ul></button>'
-	};
-});
-
 Jockstrap.controller('JockstrapController', ['$scope', function($scope) {
 
 $scope.show_msg = function() {
@@ -87,30 +134,9 @@ $scope.dd = [
 					text: 'second'
 				}
 			];
-
-
-
-
 }]);
-
 </script>
 
-<link rel="stylesheet" type="text/css" href="css/normalize.css">
-<link rel="stylesheet" type="text/css" href="css/jockstrap.css">
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
-<style type="text/css">
-.label_code {
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 8px;
-}
-
-pre.prettyprint {
-	border: solid 1px #ccc;
-	padding: 20px;
-	font-size: 13px;
-}
-</style>
 </body>
 </html>
