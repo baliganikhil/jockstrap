@@ -29,6 +29,11 @@
 	height: 30px;
 }
 
+.btn:disabled {
+	opacity: 0.6;
+	cursor: default;
+}
+
 .default {
 	background: #eee;
 	border: solid 1px #ccc;
