@@ -102,6 +102,7 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	border: solid 1px #ccc;
 	border-radius: 3px;
 	margin: 20px 0 20px 0;
+	overflow: hidden;
 }
 
 .lov {
