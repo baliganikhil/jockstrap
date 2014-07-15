@@ -17,6 +17,12 @@
 	margin: 0 auto;
 }
 
+.container-fluid {
+	padding: 20px;
+	width: 100%;
+	margin: 0 auto;
+}
+
 .btn {
 	border-radius: 3px;
 	padding: 5px 10px;
