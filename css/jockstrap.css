@@ -395,6 +395,11 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	text-align: center;
 }
 
+.table tr.green th, .table tr.green td {
+	color: #fff;
+	font-size: 14px;
+}
+
 .table.bordered {
 }
 
