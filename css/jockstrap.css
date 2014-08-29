@@ -133,11 +133,11 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 }
 
 .panel > .header {
-	background: #fafafa;
+	background: #1B2124;
 	margin: -20px;
 	padding: 13px;
 	font-size: 18px;
-	color: #444;
+	color: #fff;
 	overflow: hidden;
 }
 
