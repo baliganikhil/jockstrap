@@ -254,6 +254,11 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	border-radius: 5px;
 }
 
+.alert.default {
+	background: #fafafa;
+	border: solid 1px #e0e0e0;
+}
+
 .progress {
 	border-radius: 5px;
 	border: solid 1px #ccc;
