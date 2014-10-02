@@ -7,13 +7,14 @@
 
 .page_header.fluid {
 	width: 100%;
-	padding-left: 20px;
+	padding-left: 30px;
 }
 
 .page_header .brand {
 	font-size: 1.3em;
 	padding: 10px 0;
 	color: #444;
+	margin-right: 50px;
 }
 
 .container {
@@ -24,7 +25,7 @@
 
 .container-fluid {
 	padding: 20px;
-	width: 100%;
+	width: 95%;
 	margin: 0 auto;
 }
 
@@ -99,7 +100,7 @@ input[type="text"], input[type="password"], input[type="number"], select, textar
 	border-radius: 3px;
 	outline: none;
 	color: #333;
-	font-size: 14px;
+	font-size: 13px;
 	height: 30px;
 	background: #fff;
 }
