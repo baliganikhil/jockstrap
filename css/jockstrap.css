@@ -122,6 +122,10 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	overflow: hidden;
 }
 
+.panel.noborder {
+	border: none;
+}
+
 .lov {
 	display: inline-block;
 	overflow: hidden;
