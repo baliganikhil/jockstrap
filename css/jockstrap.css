@@ -543,3 +543,90 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 .col10 {
 	width: 100%;
 }
+
+.modal_error {
+    position: fixed;
+    width: 350px;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    background: #fff;
+    box-shadow: 0 0 5px #444;
+    padding: 20px;
+    z-index: 10000;
+    height: 200px;
+    /*opacity: 0;*/
+}
+
+.modal_error .close {
+    color: #ccc;
+    float: right;
+    cursor: pointer;
+}
+
+.modal_error .close:hover {
+    color: #aaa;
+}
+
+.modal_error .btn_ok {
+    background: #FDFDFD;
+    color: #444;
+    border: solid 1px #ccc;
+    height: 30px;
+    width: 75px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal_error .btn_ok:hover {
+    background: #f6f6f6;
+}
+
+.modal_error .modal_container {
+    margin-top: 20px;
+    position: relative;
+}
+
+.modal_backdrop {
+    background: #000;
+    opacity: 0.65;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.search_modal {
+	position: absolute;
+	margin: auto;
+	display: inline-block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 300px;
+	height: 200px;
+	background: #fff;
+	font-size: 24px;
+	color: #999;
+	font-weight: 300;
+	text-align: center;
+	box-shadow: 0 0 5px #ddd;
+}
+
+.search_modal span {
+	position: relative;
+	top: 80px;
+}
+
+.search_modal img {
+	margin-right: 10px;
+	position: relative;
+	top: 3px;
+}
