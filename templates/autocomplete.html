@@ -1,0 +1,46 @@
+<span class="autocomplete_base">
+    <input type='text' ng-model="selected" class="txt_autocomplete">
+    <ul class="autocomplete_dd" ng-show="show_dd">
+        <li ng-repeat="(key, value) in filtered_options = (options | filter:selected) track by $index" ng-click="set_value(value)" ng-class="{ac_active: key == active_key}">{{value}}</li>
+    </ul>
+</span>
+
+<style>
+
+.autocomplete_base {
+}
+
+.txt_autocomplete {
+}
+
+.autocomplete_dd {
+    padding: 0;
+    border: solid 1px #eee;
+    min-width: 150px;
+    max-width: 200px;
+    height: 120px;
+    color: #444;
+    list-style-type: none;
+    font-family: Helvetica;
+    font-size: 14px;
+    margin: 0;
+    margin-top: -1px;
+    position: relative;
+    background: #fff;
+    z-index: 10000;
+    overflow: auto;
+}
+
+.autocomplete_dd li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.autocomplete_dd li:hover {
+    background: #BAC6D7;
+}
+
+.ac_active {
+    background: #BAC6D7;
+}
+</style>

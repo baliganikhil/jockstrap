@@ -65,3 +65,65 @@ Jockstrap.directive('dropdown', function() {
 		templateUrl: './templates/dropdown.html'
 	};
 });
+
+Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
+    return {
+        restrict: 'A',
+        templateUrl: "./templates/autocomplete.html",
+        scope: {
+            options: "=",
+            selected: "="
+        },
+        link: function($scope, element, attrs, controller) {
+            var KEY_UP = 38;
+            var KEY_DOWN = 40;
+            var ENTER = 13;
+
+            $scope.show_dd = false;
+
+            $scope.active_value = '';
+            $scope.active_key = -1;
+
+            var textbox = angular.element(element[0].querySelector('.txt_autocomplete'));
+
+            textbox.bind('keydown', function(e) {
+                if (e.keyCode === KEY_UP) {
+                    if ($scope.active_key > -1) {
+                        $scope.active_key -= 1;
+                    }
+                } else if (e.keyCode == KEY_DOWN) {
+                    if ($scope.active_key < $scope.filtered_options.length - 1) {
+                        $scope.active_key += 1;
+                    } else {
+                        $scope.active_key = 0;
+                    }
+                } else if (e.keyCode == ENTER) {
+                    if ($scope.active_key > -1) {
+                        $scope.selected = $scope.filtered_options[$scope.active_key];
+                    }
+                }
+
+                $scope.$apply();
+            });
+
+            textbox.bind('focus', function() {
+                $scope.active_key = -1;
+                $scope.show_dd = true;
+                $scope.$apply();
+            });
+
+            textbox.bind('blur', function() {
+                $timeout(function() {
+                    $scope.show_dd = false;
+                    $scope.$apply();
+
+                }, 100);
+            });
+
+            $scope.set_value = function(value) {
+                $scope.selected = value;
+            };
+
+        }
+    };
+}]);

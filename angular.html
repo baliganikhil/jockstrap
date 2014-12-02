@@ -6,10 +6,10 @@
 
 <div class="container">
 
-<div class="panel">
+<!-- <div class="panel">
 	<div class="header">Accordion</div>
 	<div class="body">
-		<!-- <accordion ng-init="accordion_demo = 'demo'">
+		<accordion ng-init="accordion_demo = 'demo'">
 			<div class="set" ng-class="{active: accordion_demo == 'demo'}">
 				<div class="header" ng-click="accordion_demo = 'demo'">Demo</div>
 				<div class="body" ng-show="accordion_demo == 'demo'">body</div>
@@ -22,7 +22,7 @@
 				<div class="header" ng-click="accordion_demo = 'js'">JS</div>
 				<div class="body" ng-show="accordion_demo == 'js'">body</div>
 			</div>
-		</accordion> -->
+		</accordion>
 
 		<accordion data-name="accordion_demo">
 			<div class="set" data-show="demo">
@@ -40,24 +40,24 @@
 		</accordion>
 
 	</div>
-</div>
+</div> -->
 
 
 
-<div class="panel">
-	<div class="header">Dropdown</div>
-	<div class="body">
+	<div class="panel">
+		<div class="header">Dropdown</div>
+		<div class="body">
 
-<dropdown src="dd" text="Dropdown"></dropdown>
+	<dropdown src="dd" text="Dropdown"></dropdown>
 
 
-	<div class="label_code">HTML</div>
-	<pre class="prettyprint">
-&lt;dropdown src="dd" text="Dropdown">&lt;/dropdown>
-	</pre>
+		<div class="label_code">HTML</div>
+		<pre class="prettyprint">
+	&lt;dropdown src="dd" text="Dropdown">&lt;/dropdown>
+		</pre>
 
-	<div class="label_code">JS</div>
-	<pre class="prettyprint">
+		<div class="label_code">JS</div>
+		<pre class="prettyprint">
 // Some function
 $scope.show_msg = function() {
 	alert('Hey this was a function call');
@@ -80,10 +80,37 @@ $scope.dd = [
 		text: 'second'
 	}
 ];
-	</pre>
+		</pre>
 
+		</div>
 	</div>
-</div>
+
+	<div class="panel">
+		<div class="header">AutoComplete</div>
+		<div class="body">
+
+			<div autocomplete options="autocomplete_options" selected="autocomplete_model"></div>
+			<div>
+				Selected Value: {{autocomplete_model}}
+			</div>
+
+			<div class="label_code">HTML</div>
+		<pre class="prettyprint">
+	&lt;div autocomplete options="autocomplete_options" selected="autocomplete_model">&lt;/div>
+	&lt;div>Selected Value: { { autocomplete_model } }&lt;/div>
+		</pre>
+
+		<div class="label_code">JS</div>
+		<pre class="prettyprint">
+
+// Data for the autocomplete
+$scope.autocomplete_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar Pradesh","West Bengal","Union Territories","Andaman and Nicobar Islands","Chandigarh","Dadar and Nagar Haveli","Daman and Diu","Delhi","Lakshadeep","Pondicherry"];
+		</pre>
+
+		</div>
+
+		</div>
+	</div>
 
 
 
@@ -102,6 +129,7 @@ $scope.dd = [
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 8px;
+	margin-top: 20px;
 }
 
 pre.prettyprint {
@@ -134,6 +162,9 @@ $scope.dd = [
 					text: 'second'
 				}
 			];
+
+$scope.autocomplete_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar Pradesh","West Bengal","Union Territories","Andaman and Nicobar Islands","Chandigarh","Dadar and Nagar Haveli","Daman and Diu","Delhi","Lakshadeep","Pondicherry"];
+
 }]);
 </script>
 
