@@ -116,14 +116,14 @@ $scope.autocomplete_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Biha
 		<div class="header">AutoComplete - List of Values</div>
 		<div class="body">
 
-			<lov options="lov_options" selected="output"></lov>
+			<lov options="lov_options" selected="output" onadd="add_new_lov"></lov>
 			<div>
 				Selected Value: {{output}}
 			</div>
 
 			<div class="label_code">HTML</div>
 		<pre class="prettyprint">
-	&lt;lov options="lov_options" selected="output">&lt;/lov>
+	&lt;lov options="lov_options" selected="output" onadd="add_new_lov">&lt;/lov>
 	&lt;div>Selected Value: { { output } }&lt;/div>
 		</pre>
 
@@ -132,6 +132,10 @@ $scope.autocomplete_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Biha
 
 // Data for the autocomplete
 $scope.lov_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar Pradesh","West Bengal","Union Territories","Andaman and Nicobar Islands","Chandigarh","Dadar and Nagar Haveli","Daman and Diu","Delhi","Lakshadeep","Pondicherry"];
+
+$scope.add_new_lov = function(v) {
+	alert('You added ' + v);
+};
 		</pre>
 
 		</div>
@@ -191,6 +195,10 @@ $scope.dd = [
 $scope.autocomplete_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar Pradesh","West Bengal","Union Territories","Andaman and Nicobar Islands","Chandigarh","Dadar and Nagar Haveli","Daman and Diu","Delhi","Lakshadeep","Pondicherry"];
 
 $scope.lov_options = $scope.autocomplete_options;
+
+$scope.add_new_lov = function(v) {
+	alert('You added ' + v);
+};
 
 }]);
 </script>
