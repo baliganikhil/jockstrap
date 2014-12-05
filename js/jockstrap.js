@@ -135,16 +135,18 @@ Jockstrap.directive('lov', ['$compile', function($compile) {
         scope: {
             options: '=',
             selected: '=',
-            onadd: '='
+            onadd: '=',
+            extras: '='
         },
         link: function($scope, element, attrs, controller) {
             $scope.show_modal = false;
-            $scope.LOV = {
-                new_value: ''
-            };
 
             if (typeof $scope.options !== 'object') {
                 $scope.options = [];
+            }
+
+            if ([undefined, null].indexOf($scope.extras) > -1) {
+                $scope.extras = {};
             }
 
             $scope.show_modal = function() {
@@ -157,7 +159,7 @@ Jockstrap.directive('lov', ['$compile', function($compile) {
             };
 
             $scope.on_new_value_added = function(v) {
-                $scope.onadd(v);
+                $scope.onadd(v, $scope.extras);
             };
         }
     };
