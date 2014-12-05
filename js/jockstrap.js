@@ -143,6 +143,10 @@ Jockstrap.directive('lov', ['$compile', function($compile) {
                 new_value: ''
             };
 
+            if (typeof $scope.options !== 'object') {
+                $scope.options = [];
+            }
+
             $scope.show_modal = function() {
                 $scope.lov_modal_show = true;
             };
