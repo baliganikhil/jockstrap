@@ -6,6 +6,7 @@
 
 <div class="container">
 
+
 <!-- <div class="panel">
 	<div class="header">Accordion</div>
 	<div class="body">
@@ -110,7 +111,31 @@ $scope.autocomplete_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Biha
 		</div>
 
 		</div>
-	</div>
+
+<div class="panel">
+		<div class="header">AutoComplete - List of Values</div>
+		<div class="body">
+
+			<lov options="lov_options" selected="output"></lov>
+			<div>
+				Selected Value: {{output}}
+			</div>
+
+			<div class="label_code">HTML</div>
+		<pre class="prettyprint">
+	&lt;lov options="lov_options" selected="output">&lt;/lov>
+	&lt;div>Selected Value: { { output } }&lt;/div>
+		</pre>
+
+		<div class="label_code">JS</div>
+		<pre class="prettyprint">
+
+// Data for the autocomplete
+$scope.lov_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar Pradesh","West Bengal","Union Territories","Andaman and Nicobar Islands","Chandigarh","Dadar and Nagar Haveli","Daman and Diu","Delhi","Lakshadeep","Pondicherry"];
+		</pre>
+
+		</div>
+
 
 
 
@@ -164,6 +189,8 @@ $scope.dd = [
 			];
 
 $scope.autocomplete_options = ["Andra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar Pradesh","West Bengal","Union Territories","Andaman and Nicobar Islands","Chandigarh","Dadar and Nagar Haveli","Daman and Diu","Delhi","Lakshadeep","Pondicherry"];
+
+$scope.lov_options = $scope.autocomplete_options;
 
 }]);
 </script>

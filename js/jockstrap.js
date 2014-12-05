@@ -68,7 +68,7 @@ Jockstrap.directive('dropdown', function() {
 
 Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
     return {
-        restrict: 'A',
+        restrict: 'AE',
         templateUrl: "./templates/autocomplete.html",
         scope: {
             options: "=",
@@ -124,6 +124,29 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
                 $scope.selected = value;
             };
 
+        }
+    };
+}]);
+
+Jockstrap.directive('lov', ['$compile', function($compile) {
+    return {
+        restrict: 'E',
+        templateUrl: './templates/lov.html',
+        scope: {
+            options: '=',
+            selected: '='
+        },
+        link: function($scope, element, attrs, controller) {
+            $scope.show_modal = false;
+
+            $scope.show_modal = function() {
+                $scope.lov_modal_show = true;
+            };
+
+            $scope.set_selected = function(v) {
+                $scope.selected = v;
+                $scope.lov_modal_show = false;
+            };
         }
     };
 }]);

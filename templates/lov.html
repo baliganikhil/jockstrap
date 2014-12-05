@@ -1,0 +1,121 @@
+<span class="nglov">
+    <span autocomplete class="lov_tbx" selected="selected" options="options"></span>
+    <button class="more" ng-click="show_modal()"></button>
+
+    <div class="modal_backdrop" ng-show="lov_modal_show"></div>
+    <div class="modal list" ng-show="lov_modal_show">
+        <div class="header">
+            Search
+            <button class="btn pull_right" ng-click="lov_modal_show = false">Close</button>
+        </div>
+        <div class="body">
+            <div class="clear_both">
+                <input type="text" ng-model="lov_filter" placeholder="Filter options">
+            </div>
+
+            <div class="clear_both">
+                <ul class="lov_option_list">
+                    <li ng-repeat="(key, option) in filtered_options = (options | filter:lov_filter)" ng-click="set_selected(option)">{{option}}</li>
+                </ul>
+            </div>
+
+            <div>
+                <input type="text"> <button class="btn green">Add New</button>
+            </div>
+        </div>
+    </div>
+</span>
+
+<style>
+.nglov {
+    clear: both;
+    position: relative;
+}
+
+.lov_tbx {
+    float: left;
+    border-right: none;
+}
+
+.more {
+    display: inline-block;
+    height: 30px;
+
+    border: solid 1px #ccc;
+    border-radius: 0 3px 3px 0;
+    background: #eee;
+    width: 30px;
+    content: "...";
+    margin-left: -1px;
+}
+
+.modal_backdrop {
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.65;
+}
+
+.modal {
+    background: #fff;
+    /*display: inline-block;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    z-index: 20000;
+}
+
+.modal.small {
+    width: 480px;
+    height: 300px;
+}
+
+.modal.list {
+    width: 480px;
+    height: 500px;
+}
+
+.modal .header {
+    padding: 20px;
+}
+.modal .header {
+    font-family: Helvetica;
+    font-size: 20px;
+    color: #444;
+}
+
+.modal .body {
+    padding: 20px;
+    padding-top: 0;
+}
+
+.clear_both {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.lov_option_list {
+    margin: 0;
+    padding: 1px 0 0 0;
+    list-style-type: none;
+    height: 300px;
+    overflow: auto;
+}
+
+.lov_option_list li {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: solid 1px #ddd;
+    margin-top: -1px;
+}
+</style>

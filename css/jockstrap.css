@@ -631,3 +631,7 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	position: relative;
 	top: 3px;
 }
+
+.pull_right {
+	float: right;
+}
