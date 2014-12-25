@@ -701,6 +701,6 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 }
 
 .modal.large .body {
-    max-height: 420px;
+    max-height: 370px;
     overflow: auto;
 }
