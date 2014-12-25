@@ -635,3 +635,72 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 .pull_right {
 	float: right;
 }
+
+.small_link {
+	font-size: 12px;
+	color: blue;
+	cursor: pointer;
+}
+
+.small_link:hover {
+	text-decoration: underline;
+}
+
+.modal {
+    border: solid 1px #ccc;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #FAFAFA;
+    border-radius: 5px;
+}
+
+.modal .header {
+    padding: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.modal .body {
+    padding: 0 20px;
+    color: #333;
+}
+
+.modal .footer {
+    padding: 20px;
+    font-size: 20px;
+    color: #333;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+}
+
+.modal.small {
+	width: 400px;
+	height: 200px;
+}
+
+.modal.medium {
+	width: 600px;
+	height: 300px;
+}
+
+.modal.large {
+    width: 800px;
+    height: 500px;
+}
+
+.modal.xlarge {
+    width: 980px;
+    height: 500px;
+}
+
+.modal.large .body {
+    max-height: 420px;
+    overflow: auto;
+}
