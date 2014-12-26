@@ -334,7 +334,8 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	font-size: 13px;
 	position: relative;
 	cursor: pointer;
-	margin: 2px;
+	margin: 4px;
+	display: inline-block;
 }
 
 .tag .remove_tag {
