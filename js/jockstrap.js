@@ -85,6 +85,8 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
             $scope.active_value = '';
             $scope.active_key = -1;
 
+            var focus = false;
+
             var textbox = angular.element(element[0].querySelector('.txt_autocomplete'));
 
             textbox.bind('keydown', function(e) {
@@ -108,6 +110,7 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
             });
 
             textbox.bind('focus', function() {
+                focus = true;
                 $scope.active_key = -1;
 
                 if ($scope.options && $scope.options.length > 0) {
@@ -120,7 +123,7 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
             $scope.$watch('options', function() {
                 $scope.active_key = -1;
 
-                if ($scope.options && $scope.options.length > 0) {
+                if ($scope.options && $scope.options.length > 0 && focus) {
                     $scope.show_dd = true;
                 }
 
@@ -133,6 +136,7 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
             }, true);
 
             textbox.bind('blur', function() {
+                focus = false;
                 $timeout(function() {
                     $scope.show_dd = false;
                     $scope.$apply();
