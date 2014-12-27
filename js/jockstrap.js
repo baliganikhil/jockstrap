@@ -29,7 +29,7 @@ Jockstrap.directive('accordion', function() {
 
 								header.attr('ng-click', name + " = '" + html[0].dataset.show + "'");
 								html.find('.body').attr('ng-show', name + " == '" + html[0].dataset.show + "'");
-console.log(header)
+                                console.log(header)
 
 								final_element.push(e);
 							}
@@ -72,7 +72,8 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
         templateUrl: "./templates/autocomplete.html",
         scope: {
             options: "=",
-            selected: "="
+            selected: "=",
+            placeholder: "@"
         },
         link: function($scope, element, attrs, controller) {
             var KEY_UP = 38;
@@ -108,9 +109,28 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
 
             textbox.bind('focus', function() {
                 $scope.active_key = -1;
-                $scope.show_dd = true;
+
+                if ($scope.options && $scope.options.length > 0) {
+                    $scope.show_dd = true;
+                }
+
                 $scope.$apply();
             });
+
+            $scope.$watch('options', function() {
+                $scope.active_key = -1;
+
+                if ($scope.options && $scope.options.length > 0) {
+                    $scope.show_dd = true;
+                }
+
+            }, true);
+
+            $scope.$watch('filtered_options', function() {
+                if ($scope.filtered_options && $scope.filtered_options.length === 0) {
+                    $scope.show_dd = false;
+                }
+            }, true);
 
             textbox.bind('blur', function() {
                 $timeout(function() {
