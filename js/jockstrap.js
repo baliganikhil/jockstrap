@@ -133,6 +133,8 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
                 if ($scope.filtered_options) {
                     if ($scope.filtered_options.length === 0) {
                         $scope.show_dd = false;
+                    } else if ($scope.filtered_options.length === 1 && $scope.filtered_options[0] === $scope.selected) {
+                        $scope.show_dd = false;
                     } else {
                         $scope.show_dd = true;
                     }
@@ -141,8 +143,11 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
             }, true);
 
             $scope.$watch('selected', function() {
+                $scope.show_dd = false;
                 if ($scope.filtered_options) {
                     if ($scope.filtered_options.length === 1 && $scope.filtered_options[0] === $scope.selected) {
+                        $scope.show_dd = false;
+                    } else if ($scope.filtered_options && $scope.filtered_options.length === 0) {
                         $scope.show_dd = false;
                     } else {
                         $scope.show_dd = true;
