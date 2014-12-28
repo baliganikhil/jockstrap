@@ -149,6 +149,8 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
                         $scope.show_dd = false;
                     } else if ($scope.filtered_options && $scope.filtered_options.length === 0) {
                         $scope.show_dd = false;
+                    } else if ($scope.selected === '') {
+                        $scope.show_dd = false;
                     } else {
                         $scope.show_dd = true;
                     }
