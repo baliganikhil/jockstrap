@@ -69,7 +69,7 @@ Jockstrap.directive('dropdown', function() {
 Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
     return {
         restrict: 'AE',
-        templateUrl: "./templates/autocomplete.html",
+        templateUrl: "/hq/css/jockstrap/templates/autocomplete.html",
         scope: {
             options: "=",
             selected: "=",
@@ -130,9 +130,25 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
             }, true);
 
             $scope.$watch('filtered_options', function() {
-                if ($scope.filtered_options && $scope.filtered_options.length === 0) {
-                    $scope.show_dd = false;
+                if ($scope.filtered_options) {
+                    if ($scope.filtered_options.length === 0) {
+                        $scope.show_dd = false;
+                    } else {
+                        $scope.show_dd = true;
+                    }
                 }
+
+            }, true);
+
+            $scope.$watch('selected', function() {
+                if ($scope.filtered_options) {
+                    if ($scope.filtered_options.length === 1 && $scope.filtered_options[0] === $scope.selected) {
+                        $scope.show_dd = false;
+                    } else {
+                        $scope.show_dd = true;
+                    }
+                }
+
             }, true);
 
             textbox.bind('blur', function() {
