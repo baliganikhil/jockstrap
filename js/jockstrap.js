@@ -149,7 +149,7 @@ Jockstrap.directive('autocomplete', ['$timeout', function($timeout) {
                         $scope.show_dd = false;
                     } else if ($scope.filtered_options && $scope.filtered_options.length === 0) {
                         $scope.show_dd = false;
-                    } else if ($scope.selected === '') {
+                    } else if (noe($scope.selected)) {
                         $scope.show_dd = false;
                     } else {
                         $scope.show_dd = true;
@@ -211,3 +211,7 @@ Jockstrap.directive('lov', ['$compile', function($compile) {
         }
     };
 }]);
+
+function noe(i) {
+    return [undefined, null, ''].indexOf(i) > -1;
+}
