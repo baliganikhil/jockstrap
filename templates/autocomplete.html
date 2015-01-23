@@ -1,7 +1,7 @@
 <span class="autocomplete_base">
     <input type='text' ng-model="selected" class="txt_autocomplete" placeholder="{{placeholder}}">
     <ul class="autocomplete_dd" ng-show="show_dd">
-        <li ng-repeat="(key, value) in filtered_options = (options | filter:selected) track by $index" ng-click="set_value(value)" ng-class="{ac_active: key == active_key}">{{value}}</li>
+        <li ng-repeat="(key, value) in filtered_options = (options | filter:selected | limitTo:10) track by $index" ng-click="set_value(value)" ng-class="{ac_active: key == active_key}">{{value}}</li>
     </ul>
 </span>
 
