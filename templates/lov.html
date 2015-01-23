@@ -15,7 +15,7 @@
 
             <div class="clear_both">
                 <ul class="lov_option_list">
-                    <li ng-repeat="(key, option) in filtered_options = (options | filter:lov_filter)" ng-click="set_selected(option)">{{option}}</li>
+                    <li ng-repeat="(key, option) in filtered_options = (options | filter:lov_filter) track by $index" ng-click="set_selected(option)">{{option}}</li>
                 </ul>
             </div>
 

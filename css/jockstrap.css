@@ -657,6 +657,7 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
     margin: auto;
     background: #FAFAFA;
     border-radius: 5px;
+    z-index: 10000;
 }
 
 .modal .header {
