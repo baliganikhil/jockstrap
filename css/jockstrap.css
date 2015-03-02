@@ -299,10 +299,21 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	border-bottom: none;
 	min-width: 80px;
 	text-align: center;
-	border-radius: 4px 4px 0 0;
+	border-radius: 2px 2px 0 0;
 	position: relative;
 	background: #eee;
 	cursor: pointer;
+
+	background: #e7e7e7; /* Old browsers */
+	background: -moz-linear-gradient(top, #e7e7e7 0%, #e6e6e6 44%, #e1e1e1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e7e7e7), color-stop(44%,#e6e6e6), color-stop(100%,#e1e1e1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e7e7e7 0%,#e6e6e6 44%,#e1e1e1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e7e7e7 0%,#e6e6e6 44%,#e1e1e1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e7e7e7 0%,#e6e6e6 44%,#e1e1e1 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #e7e7e7 0%,#e6e6e6 44%,#e1e1e1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */
+
+	color: #797B7D;
 }
 
 .tab.active {
@@ -310,8 +321,11 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	font-weight: bold;
 	color: #333;
 	top: 1px;
-	background: #fff;
-	box-shadow: 2px -1px 2px #eee;
+	background: #F5F5F5;
+	/*box-shadow: 2px -1px 2px #eee;*/
+
+	color: #6E6E6E;
+	font-weight: 400;
 }
 
 .tab:hover {
