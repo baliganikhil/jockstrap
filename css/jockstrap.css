@@ -62,6 +62,10 @@ body {
 	cursor: default;
 }
 
+.btn i {
+	margin-right: 3px;
+}
+
 .default {
 	background: #eee;
 	border: solid 1px #ccc;
@@ -511,10 +515,16 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	/*color: #185CC4;*/
 	cursor: pointer;
 	text-transform: uppercase;
+
+	margin-right: 10px;
 }
 
 .nav li:hover {
 	background: #fafafa;
+}
+
+.nav li i {
+	margin-right: 3px;
 }
 
 .accordion {
