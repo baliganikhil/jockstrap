@@ -178,6 +178,10 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	background: #eee;
 }
 
+textarea {
+	line-height: 2;
+}
+
 .panel {
 	padding: 20px;
 	border: solid 1px #ccc;
@@ -517,10 +521,13 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	text-transform: uppercase;
 
 	margin-right: 10px;
+	position: relative;
 }
 
 .nav li:hover {
-	background: #fafafa;
+	/*background: #fafafa;*/
+	background: #2B2B2B;
+	color: #fff;
 }
 
 .nav li i {
@@ -538,6 +545,9 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	background: #F7F6F2;
 	z-index: 10000;
 	box-shadow: 2px 2px 2px #ddd;
+
+	margin-top: 8px;
+	left: 0;
 }
 
 .nav .submenu li {
@@ -546,6 +556,11 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 
 .nav li:hover .submenu {
 	display: block;
+}
+
+.nav .submenu li:hover {
+	background: #2B2B2B;
+	color: #fff;
 }
 
 .accordion {
