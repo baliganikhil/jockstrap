@@ -527,6 +527,27 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="number
 	margin-right: 3px;
 }
 
+.nav .submenu {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: solid 1px #ccc;
+	display: none;
+	width: 150px;
+	overflow: hidden;
+	background: #F7F6F2;
+	z-index: 10000;
+	box-shadow: 2px 2px 2px #ddd;
+}
+
+.nav .submenu li {
+	width: 100%;
+}
+
+.nav li:hover .submenu {
+	display: block;
+}
+
 .accordion {
 	box-shadow: 2px 2px 2px #eee;
 }
